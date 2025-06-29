@@ -94,6 +94,7 @@
 .about-text {
   flex: 1;
   text-align: left;
+  font-size: 1.2rem;
 }
 
 .about-image {
@@ -109,7 +110,7 @@
 
 /* Team Section */
 .team-section {
-  padding: 5rem 0;
+  padding: 5rem 0 6rem;
   color: #333;
 }
 
@@ -128,7 +129,6 @@
   background-color: #f9f9f9;
   color: #333;
   border-radius: 8px;
-  overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
 }
@@ -154,7 +154,7 @@
 
 /* Projects Section */
 .projects-section {
-  padding: 5rem 0;
+  padding: 5rem 0 6rem;
   background-color: #f9f9f9;
   color: #333;
 }
@@ -170,7 +170,6 @@
   background-color: white;
   color: #333;
   border-radius: 8px;
-  overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
 }

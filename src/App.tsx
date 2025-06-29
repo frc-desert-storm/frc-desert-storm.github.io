@@ -1,5 +1,6 @@
 import './App.css'
 import Navbar from './components/Navbar'
+import Contact from './components/Contact'
 
 function App() {
   const scrollToSection = (id: string) => {
@@ -71,10 +72,13 @@ function App() {
         </div>
       </section>
 
+      {/* Contact Section */}
+      <Contact />
+
       {/* Footer */}
-      <footer id="contact" className="footer">
+      <footer className="footer">
         <div className="footer-bottom">
-          <p>&copy; {new Date().getFullYear()} Desert Storm. All rights reserved. | Contact Us: <a href="mailto:contact@10988.org">contact@10988.org</a></p>
+          <p>&copy; {new Date().getFullYear()} Desert Storm. All rights reserved.</p>
         </div>
       </footer>
     </>
