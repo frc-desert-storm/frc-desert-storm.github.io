@@ -27,7 +27,7 @@ function App() {
           <h2 className="section-title">About Us</h2>
           <div className="about-content">
             <div className="about-text">
-              <p>[About text will be added later]</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam lobortis diam vitae lobortis commodo. Morbi tristique aliquam turpis quis dapibus. Curabitur finibus elit elit, non congue leo vestibulum at. Nunc eu neque nisi. Quisque sed condimentum erat. Curabitur ullamcorper nisi dolor, vel fringilla mauris maximus ac. Nullam sit amet hendrerit augue. Aliquam egestas in velit eget tincidunt. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Phasellus ornare, mauris ac semper finibus, elit purus tristique velit, sit amet lobortis ligula nisl vel diam. Nam mattis molestie sapien et lacinia. Nunc sit amet augue nisi. Fusce fermentum congue velit, luctus egestas elit sollicitudin a. Maecenas eleifend a libero eu dapibus. </p>
             </div>
             <div className="about-image">
               {/* Image placeholder */}
