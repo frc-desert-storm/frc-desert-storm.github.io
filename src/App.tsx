@@ -1,8 +1,52 @@
 import './App.css'
 import Navbar from './components/Navbar'
 import Contact from './components/Contact'
+import { useState } from 'react'
 
 function App() {
+  const [selectedMember, setSelectedMember] = useState<number | null>(null);
+
+  // Sample team member data with bios
+  const teamMembers = [
+    {
+      id: 1,
+      name: "John Doe",
+      role: "Team Captain",
+      bio: "John has been with Desert Storm for 3 years and specializes in robot programming. He's passionate about STEM education and mentoring younger team members."
+    },
+    {
+      id: 2,
+      name: "Jane Smith",
+      role: "Lead Engineer",
+      bio: "Jane is our mechanical design expert with 4 years of FRC experience. She leads the CAD team and has won multiple design awards in regional competitions."
+    },
+    {
+      id: 3,
+      name: "Mike Johnson",
+      role: "Electrical Lead",
+      bio: "Mike handles all electrical systems and wiring for our robots. He's studying electrical engineering and hopes to work in robotics after graduation."
+    },
+    {
+      id: 4,
+      name: "Sarah Williams",
+      role: "Outreach Coordinator",
+      bio: "Sarah manages our community outreach programs and fundraising efforts. She's passionate about bringing STEM opportunities to underserved communities."
+    }
+  ];
+
+  // Function to open the bio modal
+  const openBioModal = (id: number) => {
+    setSelectedMember(id);
+    // Lock scrolling when modal is open
+    document.body.style.overflow = 'hidden';
+  };
+
+  // Function to close the bio modal
+  const closeBioModal = () => {
+    setSelectedMember(null);
+    // Restore scrolling when modal is closed
+    document.body.style.overflow = '';
+  };
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -43,17 +87,39 @@ function App() {
         <div className="section-container">
           <h2 className="section-title">Our Team</h2>
           <div className="team-grid">
-            {/* Team member placeholders */}
-            {[1, 2, 3, 4].map((item) => (
-              <div key={item} className="team-member">
+            {teamMembers.map((member) => (
+              <div 
+                key={member.id} 
+                className="team-member" 
+                onClick={() => openBioModal(member.id)}
+              >
                 <div className="member-image"></div>
-                <h3>Team Member</h3>
-                <p>Role</p>
+                <h3>{member.name}</h3>
+                <p>{member.role}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
+
+      {/* Bio Modal */}
+      {selectedMember !== null && (
+        <div className="bio-modal-overlay" onClick={closeBioModal}>
+          <div className="bio-modal" onClick={(e) => e.stopPropagation()}>
+            <button className="close-modal" onClick={closeBioModal}>×</button>
+            <div className="bio-modal-content">
+              <div className="bio-modal-left">
+                <div className="member-image large"></div>
+                <h2>{teamMembers.find(m => m.id === selectedMember)?.name}</h2>
+                <h3>{teamMembers.find(m => m.id === selectedMember)?.role}</h3>
+              </div>
+              <div className="bio-modal-right">
+                <p className="bio-text">{teamMembers.find(m => m.id === selectedMember)?.bio}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Projects Section */}
       <section id="projects" className="projects-section">

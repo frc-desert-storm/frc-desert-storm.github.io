@@ -25,7 +25,7 @@ const Contact: React.FC = () => {
     setStatusType('sending');
 
     try {
-      const response = await fetch('https://formspree.io/f/mblywlwp', {
+      const response = await fetch('https://formspree.io/f/xovwrklz', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -60,9 +60,6 @@ const Contact: React.FC = () => {
           <div className="contact-info">
             <h3>Get in Touch</h3>
             <p>Have questions about our team or want to support us? Send us a message and we'll get back to you as soon as possible.</p>
-            <div className="contact-details">
-              <p><strong>Email:</strong> <a href="mailto:contact@10988.org">contact@10988.org</a></p>
-            </div>
           </div>
           <div className="contact-form-container">
             <form onSubmit={handleSubmit} className="contact-form">
