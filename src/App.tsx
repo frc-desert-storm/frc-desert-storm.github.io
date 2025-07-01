@@ -6,31 +6,18 @@ import { useState } from 'react'
 function App() {
   const [selectedMember, setSelectedMember] = useState<number | null>(null);
 
-  // Sample team member data with bios
   const teamMembers = [
     {
       id: 1,
-      name: "John Doe",
-      role: "Team Captain",
-      bio: "John has been with Desert Storm for 3 years and specializes in robot programming. He's passionate about STEM education and mentoring younger team members."
+      name: "Lee Adams",
+      role: "Coach",
+      bio: "Start with this for my profile “With over 35 years of experience in mechanical design and manufacturing, Lee Adams brings deep industry expertise and a passion for innovation to the robotics team. A seasoned Mechanical Design Engineer and Certified SolidWorks Expert, he specializes in turning complex engineering concepts into real-world solutions. As Head Coach,  Lee Adams mentors students in design, problem-solving, and teamwork—bridging the gap between classroom learning and cutting-edge engineering practices.”"
     },
     {
       id: 2,
-      name: "Jane Smith",
-      role: "Lead Engineer",
+      name: "Colleen Adams",
+      role: "Coach",
       bio: "Jane is our mechanical design expert with 4 years of FRC experience. She leads the CAD team and has won multiple design awards in regional competitions."
-    },
-    {
-      id: 3,
-      name: "Mike Johnson",
-      role: "Electrical Lead",
-      bio: "Mike handles all electrical systems and wiring for our robots. He's studying electrical engineering and hopes to work in robotics after graduation."
-    },
-    {
-      id: 4,
-      name: "Sarah Williams",
-      role: "Outreach Coordinator",
-      bio: "Sarah manages our community outreach programs and fundraising efforts. She's passionate about bringing STEM opportunities to underserved communities."
     }
   ];
 
