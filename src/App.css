@@ -142,6 +142,8 @@
   height: 250px;
   background-color: #ddd;
   border-radius: 8px 8px 0 0;
+  object-fit: cover;
+  object-position: center;
 }
 
 .team-member h3 {
@@ -273,6 +275,15 @@
   height: 200px;
   background-color: #ddd;
   border-radius: 8px 8px 0 0;
+  object-fit: cover;
+  object-position: center;
+}
+
+.project-image.large {
+  width: 200px;
+  height: 200px;
+  border-radius: 15px;
+  margin-bottom: 1rem;
 }
 
 .project-card h3 {
