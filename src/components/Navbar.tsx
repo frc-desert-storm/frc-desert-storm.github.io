@@ -38,7 +38,7 @@ const Navbar: React.FC = () => {
             <a href="#team" onClick={(e) => { e.preventDefault(); scrollToSection('team'); }} className="navbar-link">Team</a>
           </li>
           <li className="navbar-item">
-            <a href="#projects" onClick={(e) => { e.preventDefault(); scrollToSection('projects'); }} className="navbar-link">Robots</a>
+            <a href="#robots" onClick={(e) => { e.preventDefault(); scrollToSection('robots'); }} className="navbar-link">Robots</a>
           </li>
           <li className="navbar-item">
             <a href="#contact" onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }} className="navbar-link">Contact</a>

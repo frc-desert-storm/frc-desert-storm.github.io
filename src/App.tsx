@@ -5,7 +5,7 @@ import { useState } from 'react'
 
 function App() {
   const [selectedMember, setSelectedMember] = useState<number | null>(null)
-  const [selectedProject, setSelectedProject] = useState<number | null>(null)
+  const [selectedRobot, setSelectedRobot] = useState<number | null>(null)
 
   const teamMembers = [
     {
@@ -24,7 +24,7 @@ function App() {
     }
   ]
 
-  const projects = [
+  const robots = [
     {
       id: 1,
       name: 'Coming Soon...',
@@ -58,13 +58,13 @@ function App() {
     document.body.style.overflow = ''
   }
 
-  const openProjectModal = (id: number) => {
-    setSelectedProject(id)
+  const openRobotModal = (id: number) => {
+    setSelectedRobot(id)
     document.body.style.overflow = 'hidden'
   }
 
-  const closeProjectModal = () => {
-    setSelectedProject(null)
+  const closeRobotModal = () => {
+    setSelectedRobot(null)
     document.body.style.overflow = ''
   }
 
@@ -76,7 +76,7 @@ function App() {
   }
 
   const selectedMemberData = teamMembers.find(m => m.id === selectedMember)
-  const selectedProjectData = projects.find(p => p.id === selectedProject)
+  const selectedRobotData = robots.find(p => p.id === selectedRobot)
 
   return (
       <>
@@ -156,37 +156,37 @@ function App() {
             </div>
         )}
 
-        {/* Projects Section */}
-        <section id="projects" className="projects-section">
+        {/* Robots Section */}
+        <section id="robots" className="robots-section">
           <div className="section-container">
             <h2 className="section-title">Our Robots</h2>
-            <div className="projects-grid">
-              {projects.map(project => (
-                  <div key={project.id} className="project-card" onClick={() => openProjectModal(project.id)}>
-                    <img src={project.image} alt={project.name} className="project-image" />
-                    <h3>{project.name}</h3>
-                    <p>{project.year}</p>
+            <div className="robots-grid">
+              {robots.map(robot => (
+                  <div key={robot.id} className="robot-card" onClick={() => openRobotModal(robot.id)}>
+                    <img src={robot.image} alt={robot.name} className="robot-image" />
+                    <h3>{robot.name}</h3>
+                    <p>{robot.year}</p>
                   </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Project Modal */}
-        {selectedProjectData && (
-            <div className="bio-modal-overlay" onClick={closeProjectModal}>
+        {/* Robot Modal */}
+        {selectedRobotData && (
+            <div className="bio-modal-overlay" onClick={closeRobotModal}>
               <div className="bio-modal" onClick={e => e.stopPropagation()}>
-                <button className="close-modal" onClick={closeProjectModal}>
+                <button className="close-modal" onClick={closeRobotModal}>
                   ×
                 </button>
                 <div className="bio-modal-content">
                   <div className="bio-modal-left">
-                    <img src={selectedProjectData.image} alt={selectedProjectData.name} className="project-image large" />
-                    <h2>{selectedProjectData.name}</h2>
-                    <h3>{selectedProjectData.year}</h3>
+                    <img src={selectedRobotData.image} alt={selectedRobotData.name} className="robot-image large" />
+                    <h2>{selectedRobotData.name}</h2>
+                    <h3>{selectedRobotData.year}</h3>
                   </div>
                   <div className="bio-modal-right">
-                    <p className="bio-text">{selectedProjectData.description}</p>
+                    <p className="bio-text">{selectedRobotData.description}</p>
                   </div>
                 </div>
               </div>
