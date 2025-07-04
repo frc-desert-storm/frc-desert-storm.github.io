@@ -31,6 +31,10 @@
 }
 
 /* Hero Section */
+#home {
+  background-image: url('/background.png');
+}
+
 .hero-section {
   height: 100vh;
   display: flex;
