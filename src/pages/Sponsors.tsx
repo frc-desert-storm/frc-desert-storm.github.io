@@ -1,6 +1,6 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
-import './Sponsors.css';
+import './Styles/Sponsors.css';
 
 const Sponsors: React.FC = () => {
     return (
@@ -9,7 +9,7 @@ const Sponsors: React.FC = () => {
             {/* Hero Section */}
             <section id="home" className="hero-section">
                 <div className="hero-content">
-                    <h1>Desert Storm</h1>
+                    <h1>Coming soon!</h1>
                 </div>
             </section>
 

@@ -1,0 +1,68 @@
+.donate-section{
+    margin-top: 60px;
+}
+
+.donate-content {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.donate-title{
+    color: #f4f4f4;
+}
+
+.donate-text{
+    flex: 1;
+    font-size: 1.2rem;
+    text-align: left;
+}
+
+.donate-image{
+    flex: 1;
+    max-width: 600px;
+}
+
+.donate-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+}
+
+
+.DonatePieTooltip{
+    border-radius: 12px;
+    font-size: 1rem;
+}
+
+.donate-chart-wrapper .recharts-legend-wrapper{
+    font-size: 1.5rem;
+}
+
+.donate-chart-wrapper {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: left;
+}
+
+
+@media (max-width: 768px) {
+    .donate-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .donate-text,
+    .donate-image {
+        flex: unset;
+        width: 100%;
+    }
+}
+
+
+
+
+

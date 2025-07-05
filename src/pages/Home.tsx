@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import Navbar from '../components/Navbar';
-import './Home.css';
+import './Styles/Home.css';
 import Contact from "../components/Contact.tsx";
 import {useLocation} from "react-router-dom";
 
@@ -107,6 +107,7 @@ const Home: React.FC = () => {
             {/* Hero Section */}
             <section id="home" className="hero-section">
                 <div className="hero-content">
+                    <img src="/logo.png" alt="Desert Storm Logo" className="hero-logo" />
                     <h1>Desert Storm</h1>
                     <p className="hero-subtitle">FIRST Robotics Competition Team</p>
                     <button className="cta-button" onClick={() => scrollToSection('about')}>
