@@ -54,7 +54,7 @@ const Donate: React.FC = () => {
                                 data={chartData}
                                 cx="50%"
                                 cy="50%"
-                                label={({ value }) => `$${value.toLocaleString()}`}
+                                label={({ value }) => (value !== undefined ? `$${value.toLocaleString()}` : '')}
                                 outerRadius={150}
                                 fill="#8884d8"
                                 dataKey="value"
@@ -72,8 +72,8 @@ const Donate: React.FC = () => {
                                 layout="vertical"
                                 verticalAlign="middle"
                                 align="right"
-                                itemSorter="datakey"
                                 iconType="square"
+                                itemSorter={(item: any) => -(item.value ?? 0)}
                             />
                         </PieChart>
                     </div>
