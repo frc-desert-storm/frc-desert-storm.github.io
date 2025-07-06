@@ -119,6 +119,8 @@
   height: 400px;
   background-color: #ddd;
   border-radius: 8px;
+  object-fit: cover;
+  object-position: center;
 }
 
 /* Team Section */
