@@ -45,12 +45,12 @@
   background-size: cover;
   background-position: center;
   color: white;
-  padding-top: 60px; /* Account for navbar */
+  padding-top: 60px;
 }
 
 .hero-content {
   backdrop-filter:  blur(5px);
-  border-radius: 48px;
+  border-radius: 20px;
   text-align: center;
   max-width: 800px;
 }
@@ -114,7 +114,7 @@
   flex: 1;
 }
 
-.image-placeholder {
+.about-image img {
   width: 100%;
   height: 400px;
   background-color: #ddd;
@@ -356,8 +356,16 @@
 }
 
 @media (max-width: 480px) {
+  .hero-content {
+    width: 90%;
+  }
+  .hero-logo {
+    height: auto;
+    width: 100%;
+  }
+
   .hero-content h1 {
-    font-size: 2.5rem;
+    display: none;
   }
 
   .section-title {

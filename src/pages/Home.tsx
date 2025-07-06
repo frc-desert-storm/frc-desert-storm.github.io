@@ -136,7 +136,7 @@ const Home: React.FC = () => {
                             </p>
                         </div>
                         <div className="about-image">
-                            <div className="image-placeholder"></div>
+                            <img src="/about.png" alt="About Us" className="about-image"/>
                         </div>
                     </div>
                 </div>
