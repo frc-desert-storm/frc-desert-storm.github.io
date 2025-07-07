@@ -1,0 +1,44 @@
+.sponsors-section{
+    display: flex;
+    padding-top: 60px;
+    min-height: 100vh;
+}
+
+.sponsors-section .section-title{
+    color: #f4f4f4;
+}
+
+.sponsors-title:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: #877348;
+}
+
+.sponsors-title{
+    position: relative;
+    font-size: 1.8rem;
+}
+
+.platinum-sponsors .sponsors-title:after {background-color: #4D4D4D;}
+.gold-sponsors .sponsors-title:after {background-color: #d5af2a;}
+.silver-sponsors .sponsors-title:after {background-color: #C0C0C0;}
+.bronze-sponsors .sponsors-title:after {background-color: #CD7F32;}
+
+.platinum-sponsor .sponsor-image{
+    max-width: 300px;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .platinum-sponsor .sponsor-image {
+        max-width: 200px; /* Smaller images on smaller screens */
+    }
+}

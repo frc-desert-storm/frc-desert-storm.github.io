@@ -1,15 +1,14 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 import './Styles/Donate.css';
-import {Cell, Legend, Pie, PieChart, Tooltip} from "recharts";
+import {Cell, Legend, Pie, PieChart, ResponsiveContainer, Tooltip} from "recharts";
 
 const Donate: React.FC = () => {
     const chartData = [
-        { name: 'Tools and material', value: 15000 },
-        { name: 'Team swag', value: 2000 },
-        { name: 'Admin costs', value: 500 },
-        { name: 'Travel/meals', value: 10000 },
-        { name: 'Scouting gear', value: 2000 },
+        {name: 'Tools and material', value: 15000},
+        {name: 'Team swag', value: 2000},
+        {name: 'Admin costs', value: 500},
+        {name: 'Travel/meals', value: 10000},
     ].sort((a, b) => b.value - a.value);
 
     const COLORS = [
@@ -31,56 +30,78 @@ const Donate: React.FC = () => {
     ];
 
 
-
     return (
         <>
-            <Navbar />
+            <Navbar/>
             {/* Donate Section */}
             <section id="donate" className="donate-section">
                 <div className="section-container">
                     <h2 className="section-title donate-title">Donate</h2>
                     <div className="donate-content">
                         <div className="donate-text">
-                            <p>Desert Storm Robotics is a student-led FRC team committed to bringing STEM education and competitive robotics to rural Arizona. Your donation helps fund life-changing experiences in engineering, programming, and teamwork.</p>
+                            <p>Desert Storm Robotics is a student-led FRC team committed to bringing STEM education and
+                                competitive robotics to rural Arizona. Your donation helps fund life-changing
+                                experiences in engineering, programming, and teamwork.</p>
                         </div>
                         <div className="donate-image">
-                            <img src="/donate.png" alt="Donate" className="donate-image" />
+                            <img src="/donate.png" alt="Donate" className="donate-image"/>
                         </div>
                     </div>
                     {/* Pie Chart Section */}
                     <div className="donate-chart-wrapper">
-                        <PieChart width={800} height={500}>
-                            <Pie
-                                data={chartData}
-                                cx="50%"
-                                cy="50%"
-                                label={({ value }) => (value !== undefined ? `$${value.toLocaleString()}` : '')}
-                                outerRadius={150}
-                                fill="#8884d8"
-                                dataKey="value"
-                                className={"DonatePie"}
-                            >
-                                {chartData.map((_entry, index) => (
-                                    <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-                                ))}
-                            </Pie>
-                            <Tooltip
-                                wrapperClassName="DonatePieTooltip"
-                                formatter={(value: number, name: string) => [`${name} $${value.toLocaleString()}`]}
-                            />
-                            <Legend
-                                layout="vertical"
-                                verticalAlign="middle"
-                                align="right"
-                                iconType="square"
-                                itemSorter={(item: any) => -(item.value ?? 0)}
-                            />
-                        </PieChart>
+                        <ResponsiveContainer width="80%" height={400}>
+                            <PieChart width={500} height={500}>
+                                <Pie
+                                    data={chartData}
+                                    cx="50%"
+                                    cy="50%"
+                                    label={({value}) => (value !== undefined ? `$${value.toLocaleString()}` : '')}
+                                    outerRadius={150}
+                                    fill="#8884d8"
+                                    dataKey="value"
+                                    className={"DonatePie"}
+                                >
+                                    {chartData.map((_entry, index) => (
+                                        <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]}/>
+                                    ))}
+                                </Pie>
+                                <Tooltip
+                                    wrapperClassName="DonatePieTooltip"
+                                    formatter={(value: number, name: string) => [`${name} $${value.toLocaleString()}`]}
+                                />
+                                <Legend
+                                    layout="vertical"
+                                    verticalAlign="middle"
+                                    align="right"
+                                    iconType="square"
+                                    itemSorter={(item: any) => -(item.value ?? 0)}
+                                />
+                            </PieChart>
+                        </ResponsiveContainer>
+                    </div>
+                    <div className="donation-tiers">
+                        <h2 className="section-title donation-tiers-title">Sponsorship Tiers</h2>
+                        <ol className="donation-tiers-list">
+                            <li className="donation-tier bronze">
+                                <h4 className="donation-tier-title">Bronze</h4>
+                                <p className="donation-tier-description">$100–$499</p>
+                            </li>
+                            <li className="donation-tier silver">
+                                <h4 className="donation-tier-title">Silver</h4>
+                                <p className="donation-tier-description">$500–$999</p>
+                            </li>
+                            <li className="donation-tier gold">
+                                <h4 className="donation-tier-title">Gold</h4>
+                                <p className="donation-tier-description">$1000–$1999</p>
+                            </li>
+                            <li className="donation-tier platinum">
+                                <h4 className="donation-tier-title">Platinum</h4>
+                                <p className="donation-tier-description">$2000+</p>
+                            </li>
+                        </ol>
                     </div>
                 </div>
             </section>
-
-
 
 
             {/* Footer */}
