@@ -137,7 +137,25 @@
     padding: 15px 20px 25px;
 }
 
+.paypal-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 40%;
+    padding: 0 2rem;
+    margin-bottom: 2rem;
+}
+.paypal-logo{
+    width: 55%;
+}
+
 @media (max-width: 768px) {
+    .paypal-container{
+        max-width: 100%;
+    }
+    .paypal-logo{
+        width: 100%;
+    }
     .donate-content {
         flex-direction: column;
         text-align: center;

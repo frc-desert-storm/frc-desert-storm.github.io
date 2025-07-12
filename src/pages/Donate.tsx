@@ -100,6 +100,24 @@ const Donate: React.FC = () => {
                             </li>
                         </ol>
                     </div>
+
+                    {/* PayPal Donation Section */}
+                    <section className="donation-section">
+                        <div className="section-container">
+                            <h2 className="section-title donate-title">Donate Here!</h2>
+                            <div className="paypal-container">
+                                <img src="/PayPal.svg" alt="PayPal" className="paypal-logo"/>
+                                <p className="paypal-donation-text">Click the button below to donate securely via PayPal. Your contribution makes a difference!</p>
+                                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                                    <input type="hidden" name="cmd" value="_s-xclick" />
+                                    <input type="hidden" name="hosted_button_id" value="9ENVUMZR3G5C8" />
+                                    <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+                                    <img alt="" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+                                </form>
+                            </div>
+                        </div>
+                    </section>
+
                 </div>
             </section>
 
