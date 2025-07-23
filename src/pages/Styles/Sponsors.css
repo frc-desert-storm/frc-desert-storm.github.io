@@ -24,16 +24,21 @@
     font-size: 1.8rem;
 }
 
-.platinum-sponsors .sponsors-title:after {background-color: #4D4D4D;}
-.gold-sponsors .sponsors-title:after {background-color: #d5af2a;}
-.silver-sponsors .sponsors-title:after {background-color: #C0C0C0;}
-.bronze-sponsors .sponsors-title:after {background-color: #CD7F32;}
+.sponsors-title-platinum:after {background-color: #4D4D4D;}
+.sponsors-title-gold:after {background-color: #d5af2a;}
+.sponsors-title-silver:after {background-color: #C0C0C0;}
+.sponsors-title-bronze:after {background-color: #CD7F32;}
+
 
 .platinum-sponsor .sponsor-image{
     max-width: 300px;
     padding: 1rem;
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.platinum-sponsors{
+    display: flex;
 }
 
 /* Responsive adjustments */

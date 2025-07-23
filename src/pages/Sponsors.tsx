@@ -11,20 +11,30 @@ const Sponsors: React.FC = () => {
                 <div className="section-container">
                     <h2 className="section-title">Sponsors</h2>
                     <div className="sponsors-content">
+                        <h2 className="sponsors-title sponsors-title-platinum">Platinum</h2>
                         <div className="platinum-sponsors">
-                            <h2 className="sponsors-title">Platinum</h2>
-                            <div className="platinum-sponsor">
-                                <img src="/Sponsors/Skunk%20Creek%20Arms.png" alt="Platinum" className="sponsor-image"/>
+                            <div className="platinum-sponsor sponsor">
+                                <a href="https://skunkcreekarms.com/">
+                                    <img src="/Sponsors/Skunk%20Creek%20Arms.png" alt="Platinum" className="sponsor-image"/>
+                                </a>
+                            </div>
+                            <div className="platinum-sponsor sponsor">
+                                <a href="https://sites.google.com/view/launchteamrobotics">
+                                    <img src="/Sponsors/Launch.png" alt="Platinum" className="sponsor-image" />
+                                </a>
                             </div>
                         </div>
+                        <h2 className="sponsors-title sponsors-title-gold">Gold</h2>
                         <div className="gold-sponsors">
-                            <h2 className="sponsors-title">Gold</h2>
+
                         </div>
+                        <h2 className="sponsors-title sponsors-title-silver">Silver</h2>
                         <div className="silver-sponsors">
-                            <h2 className="sponsors-title">Silver</h2>
+
                         </div>
+                        <h2 className="sponsors-title sponsors-title-bronze">Bronze</h2>
                         <div className="bronze-sponsors">
-                            <h2 className="sponsors-title">Bronze</h2>
+
                         </div>
                     </div>
                 </div>
