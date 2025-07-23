@@ -38,11 +38,15 @@
 }
 
 .platinum-sponsors{
+    justify-content: center;
     display: flex;
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+    .platinum-sponsors{
+        flex-direction: column;
+    }
     .platinum-sponsor .sponsor-image {
         max-width: 200px; /* Smaller images on smaller screens */
     }
