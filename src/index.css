@@ -4,7 +4,7 @@ html {
 }
 
 :root {
-  font-family: 'Share Tech', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Share Tech", system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -69,3 +69,99 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+/* Vertical tiers 
+============================== */
+
+:root {
+  --tier-microburst: #c6843a;
+  --tier-dustdevil: #a7a7a7;
+  --tier-standstorm: #877348; /* team color */
+  --tier-tempest: #4b596d;
+  --tier-monsoon: #335c67;
+
+  --tier-bg: #f5f5f5;
+  --page-bg: #242424; /* site background */
+}
+
+.tiers {
+  margin-block: 2rem 3rem;
+}
+.tiers__title {
+  font-size: clamp(1.25rem, 1.2vw + 1rem, 2rem);
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  margin-bottom: 1rem;
+}
+.tiers__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 1rem; /* space between cards */
+}
+
+.tier {
+  --tier: #999; /* fallback */
+  align-items: stretch;
+  display: grid;
+  grid-template-columns: 10px 1fr; /* colored rail + content */
+  background: #f5f5f5;
+  border-radius: 10px;
+  overflow: hidden; /* keep rail corners rounded */
+  box-shadow:
+    0 1px 0 rgba(0, 0, 0, 0.06),
+    0 10px 20px rgba(0, 0, 0, 0.06);
+}
+
+.tier__rail {
+  background: var(--tier);
+  height: 100%;
+}
+
+.tier__content {
+  padding: clamp(0.875rem, 0.8vw, 1.25rem) clamp(1rem, 1.2vw, 1.5rem);
+  display: grid;
+  gap: 0.5rem;
+}
+
+.tier__header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.25rem 0.75rem;
+  border-bottom: 1px solid color-mix(in oklab, currentColor 12%, transparent);
+  padding-bottom: 0.4rem;
+  margin-bottom: 0.2rem;
+}
+
+.tier__name {
+  color: #333;
+  font-size: clamp(1.25rem, 1vw + 1rem, 1.75rem);
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  margin: 0;
+}
+
+.tier__amount {
+  color: #333;
+  font-weight: 700;
+  opacity: 0.8;
+  margin: 0;
+}
+
+/* Optional sections */
+.tier__blurb {
+  margin: 0.25rem 0 0;
+}
+.tier__perks {
+  color: #333;
+  margin: 0.5rem 0 0;
+  padding-left: 1.2rem;
+  text-align: left;
+}
+
+/* Nice divider rhythm if you prefer a single rail-less list:
+.tier { grid-template-columns: 1fr; border-left: 6px solid var(--tier); }
+*/
