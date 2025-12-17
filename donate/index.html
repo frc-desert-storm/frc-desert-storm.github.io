@@ -1,0 +1,623 @@
+<!doctype html>
+  <html>
+    <head>
+      <meta charset="UTF-8" />
+      <link rel="icon" type="image/svg+xml" href="/logo.png" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Share+Tech&display=swap"
+        rel="stylesheet"
+      />
+      <title>Desert storm 10988</title>
+      <!-- Google tag (gtag.js) -->
+      <script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-5WDX3NJTSP"
+      ></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+          dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
+
+        gtag("config", "G-5WDX3NJTSP");
+      </script>
+
+      <link rel="stylesheet" href="../assets/css/styles.css" />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Share+Tech&amp;display=swap"
+        rel="stylesheet"
+      />
+		<style>
+.piechart { color: var(--text); margin: 2rem auto; max-width: 900px; }
+.piechart__wrap {
+  position: relative;
+  width: min(640px, 95vw); /* was 520px */
+  margin: 0 auto;
+  aspect-ratio: 1/1;
+  background: var(--panel);
+  border: 1px solid rgba(255,255,255,.06);
+  border-radius: 16px;
+  padding: 12px;
+  box-shadow: 0 14px 30px rgba(0,0,0,.22);
+}
+#budgetPie { width: 100%; height: 100%; }
+
+.piechart__center{
+  position:absolute; inset: 50% auto auto 50%;
+  transform: translate(-50%,-50%);
+  text-align:center; pointer-events:none;
+}
+.piechart__total-label{ font-size:.9rem; opacity:.85; }
+.piechart__total-value{ font-size:1.4rem; font-weight:800; }
+
+.piechart__tooltip{
+  position: fixed; background: white; color: #222;
+  border: 1px solid #ddd; padding: .5rem .6rem; border-radius: .5rem;
+  font-size: .9rem; pointer-events: none; box-shadow: 0 6px 18px rgba(0,0,0,.18); z-index: 20;
+}
+
+/* Legend = single line, no % */
+.piechart__legend{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: .6rem 1rem;
+  list-style:none; padding: 1rem 0 0; margin: 1rem auto 0; max-width: 760px;
+}
+.piechart__legend li{
+  display:flex; align-items:center; gap:.5rem;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.piechart__swatch{
+  width: 14px; height: 14px; border-radius: 3px;
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,.15); flex: 0 0 auto;
+}
+</style>
+    </head>
+    <body>
+      <div id="root">
+        <!-- Navbar -->
+        <nav class="navbar">
+          <div class="navbar-container">
+            <div class="navbar-logo">
+                    <a href="/" data-discover="true">Desert Storm</a>
+                </div>
+            <div class="hamburger-menu">
+              <span></span><span></span><span></span>
+            </div>
+            <ul class="navbar-menu">
+              <li class="navbar-item">
+                <a class="navbar-link" href="/#home" data-discover="true"
+                  >Home</a
+                >
+              </li>
+              <li class="navbar-item">
+                <a class="navbar-link" href="/#about" data-discover="true"
+                  >About</a
+                >
+              </li>
+              <li class="navbar-item">
+                <a class="navbar-link" href="/#team" data-discover="true"
+                  >Team</a
+                >
+              </li>
+              <li class="navbar-item">
+                <a class="navbar-link" href="/#robots" data-discover="true"
+                  >Robots</a
+                >
+              </li>
+              <li class="navbar-item">
+                <a class="navbar-link" href="/#contact" data-discover="true"
+                  >Contact</a
+                >
+              </li>
+              <li class="navbar-item">
+                <a class="navbar-link" href="/sponsors" data-discover="true"
+                  >Sponsors</a
+                >
+              </li>
+              <li class="navbar-item">
+                <a class="navbar-link" href="/donate" data-discover="true"
+                  >Donate</a
+                >
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <!-- /navbar -->
+
+        <section class="light-section" aria-labelledby="donate-choose">
+					<div class="section-container">
+          <h2 id="donate-choose" class="section-title">Donate Here</h2>
+          <p>Choose the way you’d like to support Desert Storm Robotics.</p>
+
+          <div class="donate-gateway__grid">
+            <!-- PayPal -->
+            <a
+              class="donate-card donate-card--paypal"
+              href="https://www.paypal.com/donate?token=9Twn1DTItBALxXwYyTKHE5RuJuXMW4-1nNtmOreKAINXjW6cT8aAHCSHPMfIhPmgIVRvom-98RHN9Sd2"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Donate via PayPal (opens in a new tab)"
+            >
+              <div class="donate-card__brand">
+                <!-- Simple PP glyph -->
+                <svg
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                  class="donate-card__icon"
+                >
+                  <path
+                    d="M7 21h3l.6-3H14.5c3.5 0 6.3-2.4 6.3-5.9 0-2.9-2.1-4.8-5.2-4.8H8.6L7 21Z"
+                  />
+                </svg>
+                <span>PayPal</span>
+              </div>
+              <span class="donate-card__cta">Donate with PayPal</span>
+            </a>
+
+            <!-- GoFundMe -->
+            <a
+              class="donate-card donate-card--gofundme"
+              href="https://www.gofundme.com/f/empower-future-stem-innovators-from-rural-arizona"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Donate via GoFundMe (opens in a new tab)"
+            >
+              <div class="donate-card__brand">
+                <!-- Simple heart/arc mark -->
+                <svg
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                  class="donate-card__icon"
+                >
+                  <path
+                    d="M12 21s8-4.7 8-10.2C20 7 18 5 15.8 5c-1.9 0-3 1-3.8 2C11.2 6 10 5 8.2 5 6 5 4 7 4 10.8 4 16.3 12 21 12 21Z"
+                  />
+                </svg>
+                <span>GoFundMe</span>
+              </div>
+              <span class="donate-card__cta">Give on GoFundMe</span>
+            </a>
+
+            <!-- Zelle -->
+            <button
+              class="donate-card donate-card--zelle"
+              type="button"
+              aria-haspopup="dialog"
+              aria-controls="zelle-modal"
+            >
+              <div class="donate-card__brand">
+                <!-- Simple Z glyph -->
+                <svg
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                  class="donate-card__icon"
+                >
+                  <path d="M5 6h14v3H12l7 9H5v-3h7L5 6Z" />
+                </svg>
+                <span>Zelle</span>
+              </div>
+              <span class="donate-card__cta">Scan to Donate</span>
+            </button>
+          </div>
+        </section>
+
+        <!-- Zelle Modal -->
+        <div
+          class="donate-modal"
+          id="zelle-modal"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="zelle-title"
+          hidden
+        >
+          <div class="donate-modal__dialog">
+            <button
+              class="donate-modal__close"
+              type="button"
+              aria-label="Close"
+            >
+              ×
+            </button>
+            <h3 id="zelle-title">Donate with Zelle</h3>
+            <p>Scan the QR code with your banking app to donate.</p>
+            <img
+              class="donate-modal__qr"
+              src="../assets/img/zelle.png"
+							style="padding: 20px 0;"
+              alt="Zelle QR code"
+            />
+<!--            <p class="donate-modal__note">
+              Prefer email? Send to: <strong>donations@desertstorm.org</strong>
+</p> -->
+          </div>
+        </div>
+
+<section class="dark-section">
+  <div class="section-container">
+    <h2 class="section-title donate-title">Team Budget</h2>
+
+    <figure class="piechart" aria-labelledby="budget-title">
+      <figcaption id="budget-title" class="sr-only" style="display: none;">Team Budget Allocation</figcaption>
+
+      <!-- Chart -->
+      <div class="piechart__wrap">
+        <svg id="budgetPie" viewBox="0 0 360 400" role="img" aria-label="Budget donut chart"></svg>
+        <div class="piechart__center">
+          <div class="piechart__total-label">Total</div>
+          <div class="piechart__total-value" id="pieTotal">$60,000</div>
+        </div>
+        <div class="piechart__tooltip" id="pieTooltip" hidden></div>
+      </div>
+
+      <!-- Legend -->
+      <ul class="piechart__legend" id="pieLegend" aria-label="Legend"></ul>
+    </figure>
+  </div>
+</section>
+
+
+					<section class="dark-section">
+						<div class="section-container">
+            <h2 class="section-title donation-tiers-title">Sponsor Our Team</h2>
+            <p class="section-subtitle">
+              Your donation helps us build robots and opportunities for
+              students.
+            </p>
+            <section aria-labelledby="tiers-heading" class="tiers">
+              <h2 id="tiers-heading" class="tiers__title">
+                Sponsorship Levels
+              </h2>
+              <ol class="tiers__list">
+                <li class="tier" style="--tier: var(--tier-monsoon)">
+                  <div class="tier__rail" aria-hidden="true"></div>
+                  <div class="tier__content">
+                    <div class="tier__header">
+                      <h3 class="tier__name">Monsoon Elite</h3>
+                      <p class="tier__amount">$5,000+</p>
+                    </div>
+                    <ul class="tier__perks">
+                      <li>
+                        Premier large logo placement on robot, uniforms, pit
+                        banners, and website
+                      </li>
+                      <li>
+                        Sponsor name announced during alliance selections at
+                        official competitions
+                      </li>
+                      <li>
+                        Featured sponsor spotlight on social media with tagging
+                      </li>
+                      <li>VIP invitations to team events and demos</li>
+                      <li>
+                        Regular recognition in press releases, newsletters, and
+                        team videos
+                      </li>
+                      <li>Signed Desert Storm Team photo plaque and t-shirt</li>
+                      <li>
+                        Team appearance with robot demonstration at a company or
+                        community local event
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="tier" style="--tier: var(--tier-tempest)">
+                  <div class="tier__rail" aria-hidden="true"></div>
+                  <div class="tier__content">
+                    <div class="tier__header">
+                      <h3 class="tier__name">Tempest</h3>
+                      <p class="tier__amount">$2,500-$4,999</p>
+                    </div>
+                    <ul class="tier__perks">
+                      <li>
+                        Medium logo on team robot, uniforms, pit banners, and
+                        website
+                      </li>
+                      <li>Social media shout-out and thank-you post</li>
+                      <li>Invitations to select team competitions</li>
+                      <li>Recognition in newsletters and press materials</li>
+                      <li>Signed Desert Storm Team photo and t-shirt</li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="tier" style="--tier: var(--tier-sandstorm)">
+                  <div class="tier__rail" aria-hidden="true"></div>
+                  <div class="tier__content">
+                    <div class="tier__header">
+                      <h3 class="tier__name">Sandstorm</h3>
+                      <p class="tier__amount">$1000-$2,499</p>
+                    </div>
+                    <ul class="tier__perks">
+                      <li>
+                        Small logo on team uniforms, pit banners, and website
+                      </li>
+                      <li>Social media thank-you mention</li>
+                      <li>Recognition in newsletters</li>
+                      <li>Desert Storm Team photo or t-shirt</li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="tier" style="--tier: var(--tier-dustdevil)">
+                  <div class="tier__rail" aria-hidden="true"></div>
+                  <div class="tier__content">
+                    <div class="tier__header">
+                      <h3 class="tier__name">Dust Devil</h3>
+                      <p class="tier__amount">$500-$999</p>
+                    </div>
+                    <ul class="tier__perks">
+                      <li>
+                        Name or logo on website and social media thank-you posts
+                      </li>
+                      <li>Recognition in newsletters</li>
+                      <li>Desert Storm photo</li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="tier" style="--tier: var(--tier-microburst)">
+                  <div class="tier__rail" aria-hidden="true"></div>
+                  <div class="tier__content">
+                    <div class="tier__header">
+                      <h3 class="tier__name">Microburst</h3>
+                      <p class="tier__amount">up to $499</p>
+                    </div>
+                    <ul class="tier__perks">
+                      <li>Name listed on the website supporter page</li>
+                      <li>Social media thank-you and shoutout</li>
+                    </ul>
+                  </div>
+                </li>
+              </ol>
+            </section>
+<!--            <section class="donation-section">
+              <div class="section-container">
+                <h2 class="section-title donate-title">Donate Here!</h2>
+                <div class="payment-methods-container">
+                  <div class="paypal-container">
+                    <img
+                      alt="PayPal"
+                      class="paypal-logo"
+                      src="../assets/img/PayPal.svg"
+                    />
+                    <p class="paypal-donation-text">
+                      Click the button below to donate securely via PayPal. Your
+                      contribution makes a difference!
+                    </p>
+                    <form
+                      action="https://www.paypal.com/cgi-bin/webscr"
+                      method="post"
+                      target="_top"
+                    >
+                      <input type="hidden" value="_s-xclick" name="cmd" /><input
+                        type="hidden"
+                        value="9ENVUMZR3G5C8"
+                        name="hosted_button_id"
+                      /><input
+                        src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif"
+                        title="PayPal - The safer, easier way to pay online!"
+                        alt="Donate with PayPal button"
+                        type="image"
+                        name="submit"
+                      /><img
+                        alt=""
+                        width="1"
+                        height="1"
+                        src="https://www.paypal.com/en_US/i/scr/pixel.gif"
+                      />
+                    </form>
+                  </div>
+                  <div class="zelle-container">
+                    <img
+                      alt="Zelle"
+                      class="zelle-logo"
+                      src="../assets/img/zelle.png"
+                    />
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+			</section> -->
+				</div>
+        <footer class="footer">
+          <div class="footer-bottom">
+            <p>© 2025 Desert Storm. All rights reserved.</p>
+          </div>
+        </footer>
+      </div>
+
+      <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          const hamburger = document.querySelector(".hamburger-menu");
+          const navbarMenu = document.querySelector(".navbar-menu");
+
+          hamburger.addEventListener("click", () => {
+            hamburger.classList.toggle("active");
+            navbarMenu.classList.toggle("active");
+          });
+
+          document.querySelectorAll(".navbar-menu a").forEach((link) => {
+            link.addEventListener("click", () => {
+              hamburger.classList.remove("active");
+              navbarMenu.classList.remove("active");
+            });
+          });
+        });
+      </script>
+			<script>
+  const zelleBtn = document.querySelector('.donate-card--zelle');
+  const modal = document.getElementById('zelle-modal');
+  const closeBtn = document.querySelector('.donate-modal__close');
+
+  if (zelleBtn && modal && closeBtn) {
+    zelleBtn.addEventListener('click', () => modal.hidden = false);
+    closeBtn.addEventListener('click', () => modal.hidden = true);
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) modal.hidden = true;
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') modal.hidden = true;
+    });
+  }
+</script>
+<script>
+  // === Editable DATA (labels and values) ===
+  const data = [
+    { name: "Registration Fees", value: 15000, color: "#877348" },       // gold
+    { name: "Robot Build, Pit, & Tooling", value: 20000, color: "#4b596d" }, // tempest
+    { name: "Travel Expenses", value: 20000, color: "#335c67" },         // monsoon
+    { name: "Team Branding & PR", value: 3500, color: "#c6843a" },       // microburst
+    { name: "Practice Field & Training", value: 1500, color: "#a7a7a7" } // dust
+  ];
+
+  // === Rendering ===
+  const svg = document.getElementById("budgetPie");
+  const legend = document.getElementById("pieLegend");
+  const tooltip = document.getElementById("pieTooltip");
+  const totalEl = document.getElementById("pieTotal");
+
+  const W = 360, H = 400, CX = 180, CY = 200;
+  const outerR = 140;     // outer radius
+  const innerR = 90;      // inner radius (donut hole)
+
+  const total = data.reduce((s, d) => s + d.value, 0);
+  totalEl.textContent = `$${total.toLocaleString()}`;
+
+  // Utilities
+  const polar = (cx, cy, r, angleDeg) => {
+    const a = (angleDeg - 90) * Math.PI / 180;
+    return { x: cx + r * Math.cos(a), y: cy + r * Math.sin(a) };
+  };
+
+  // Donut arc path (outer arc + inner arc back)
+  function donutSlicePath(cx, cy, rOuter, rInner, startAngle, endAngle) {
+    const largeArc = endAngle - startAngle <= 180 ? 0 : 1;
+
+    const p1 = polar(cx, cy, rOuter, endAngle);
+    const p2 = polar(cx, cy, rOuter, startAngle);
+    const p3 = polar(cx, cy, rInner, startAngle);
+    const p4 = polar(cx, cy, rInner, endAngle);
+
+    return [
+      `M ${p1.x} ${p1.y}`,
+      `A ${rOuter} ${rOuter} 0 ${largeArc} 0 ${p2.x} ${p2.y}`,
+      `L ${p3.x} ${p3.y}`,
+      `A ${rInner} ${rInner} 0 ${largeArc} 1 ${p4.x} ${p4.y}`,
+      "Z"
+    ].join(" ");
+  }
+
+  // Label line + text outside
+  // Clamp helper so text stays inside the SVG box
+  const clamp = (val, min, max) => Math.max(min, Math.min(max, val));
+
+  // Label line + text outside (now clamps text X)
+  function addLabel(svgGroup, name, value, startAngle, endAngle, color) {
+    const labelPad = 10;             // left/right padding inside SVG
+    const labelLineOut = 20;         // distance beyond outer radius to end the leader line
+    const textOffset = 6;            // small offset past the line end
+
+    const mid = (startAngle + endAngle) / 2;
+    const lineStart = polar(CX, CY, outerR + 8, mid);
+    const lineEnd = polar(CX, CY, outerR + labelLineOut, mid);
+
+    // Decide side (left/right) and anchor
+    const isRight = lineEnd.x >= CX;
+    const anchor = isRight ? "start" : "end";
+
+    // Desired text X before clamping
+    const desiredX = isRight ? lineEnd.x + textOffset : lineEnd.x - textOffset;
+    // Clamp X so it never goes off-canvas
+    const xText = clamp(desiredX, labelPad, W - labelPad);
+
+    // Leader line
+    const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+    line.setAttribute("x1", lineStart.x);
+    line.setAttribute("y1", lineStart.y);
+    line.setAttribute("x2", lineEnd.x);
+    line.setAttribute("y2", lineEnd.y);
+    line.setAttribute("stroke", color);
+    line.setAttribute("stroke-width", "1.4");
+    line.setAttribute("opacity", "0.95");
+    svgGroup.appendChild(line);
+
+    // Text (value only)
+    const txt = document.createElementNS("http://www.w3.org/2000/svg", "text");
+    txt.setAttribute("x", xText);
+    txt.setAttribute("y", lineEnd.y + 4);
+    txt.setAttribute("fill", color);
+    txt.setAttribute("font-size", "10");
+    txt.setAttribute("text-anchor", anchor);
+    txt.textContent = `$${value.toLocaleString()}`;
+    svgGroup.appendChild(txt);
+  }
+
+  // Root group
+  const g = document.createElementNS("http://www.w3.org/2000/svg", "g");
+  svg.appendChild(g);
+
+  // Background ring (subtle)
+  const bg = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+  bg.setAttribute("cx", CX);
+  bg.setAttribute("cy", CY);
+  bg.setAttribute("r", (outerR + innerR) / 2);
+  bg.setAttribute("fill", "none");
+  bg.setAttribute("stroke", "rgba(255,255,255,.08)");
+  bg.setAttribute("stroke-width", outerR - innerR);
+  g.appendChild(bg);
+
+  // Draw slices
+  let angle = 0;
+  data.forEach((d, i) => {
+    const pct = d.value / total;
+    const start = angle;
+    const end = angle + pct * 360;
+    angle = end;
+
+    const pathEl = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    pathEl.setAttribute("d", donutSlicePath(CX, CY, outerR, innerR, start, end));
+    pathEl.setAttribute("fill", d.color);
+    pathEl.setAttribute("stroke", "#fff");
+    pathEl.setAttribute("stroke-width", "1");
+    pathEl.setAttribute("data-name", d.name);
+    pathEl.setAttribute("data-value", d.value);
+    pathEl.style.cursor = "pointer";
+
+    // Tooltip handlers
+    pathEl.addEventListener("mousemove", (e) => {
+      const dollars = `$${d.value.toLocaleString()}`;
+      const perc = `${(pct * 100).toFixed(1)}%`;
+      tooltip.innerHTML = `<strong>${d.name}</strong><br>${dollars} • ${perc}`;
+      tooltip.hidden = false;
+      const offset = 14;
+      tooltip.style.left = (e.clientX + offset) + "px";
+      tooltip.style.top = (e.clientY + offset) + "px";
+    });
+    pathEl.addEventListener("mouseleave", () => { tooltip.hidden = true; });
+
+    g.appendChild(pathEl);
+
+    // Label
+    addLabel(g, d.name, d.value, start, end, d.color);
+  });
+
+ // Legend (single line, no percentages)
+  legend.innerHTML = ""; // clear
+  data.forEach(d => {
+    const li = document.createElement("li");
+    const sw = document.createElement("span");
+    sw.className = "piechart__swatch";
+    sw.style.background = d.color;
+
+    const txt = document.createElement("span");
+    txt.textContent = `${d.name} — $${d.value.toLocaleString()}`;
+    txt.title = `${d.name} — $${d.value.toLocaleString()}`; // full text on hover
+
+    li.appendChild(sw);
+    li.appendChild(txt);
+    legend.appendChild(li);
+  });
+</script>
+    </body>
+  </html>
