@@ -146,6 +146,7 @@ button:focus-visible {
 
 .tier__amount {
   color: #333;
+	font-size: clamp(1.25rem, 1vw + 1rem, 1.75rem);
   font-weight: 700;
   opacity: 0.8;
   margin: 0;
