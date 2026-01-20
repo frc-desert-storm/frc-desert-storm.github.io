@@ -415,7 +415,7 @@ button:focus-visible {
   max-height: 180px;
   max-width: 360px;
 }
-.sponsor.standstorm img {
+.sponsor.sandstorm img {
   max-height: 160px;
   max-width: 320px;
 }
@@ -426,6 +426,10 @@ button:focus-visible {
 .sponsor.microburst img {
   max-height: 120px;
   max-width: 240px;
+}
+.sponsor-tier {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
 }
 
 /* On small screens: stack logos in a column */
@@ -441,9 +445,7 @@ button:focus-visible {
   justify-content: center;
   gap: 1rem;
 }
-.sponsor-tier {
-  margin-bottom: 1.5rem;
-}
+
 .sponsor-image {
   max-width: 300px;
   padding: 1rem;
