@@ -1,126 +1,64 @@
-/* =========================================================
-   Sponsors
-   ========================================================= */
-
-.sponsors-section {
-  display: flex;
-  padding-top: var(--navbar-height);
-  min-height: 100vh;
+/* Sponsors — modern tier wall */
+.sponsors-hero {
+  background: linear-gradient(180deg, rgba(13,10,6,0.82), rgba(13,10,6,0.94)), url("../img/background.png") center / cover;
+  border-bottom: 1px solid var(--line-dark);
+  text-align: left;
 }
-.sponsors-section .section-title {
-  color: #f4f4f4;
-}
-
+.sponsor-tier { margin-top: 2.5rem; }
 .sponsors-title {
-  position: relative;
-  font-size: 1.8rem;
-  margin-bottom: 2rem;
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 1.35rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 1.2rem;
 }
-.sponsors-title::after {
+.sponsors-title::before {
   content: "";
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80px;
-  height: 4px;
-  background-color: #877348;
+  width: 26px; height: 18px;
+  background: var(--tier-monsoon);
+  clip-path: polygon(0 0, 100% 0, calc(100% - 8px) 100%, 0 100%);
 }
-
-.sponsor {
-  margin-bottom: 1.5em;
-}
-.sponsors-title-monsoon::after {
-  background-color: var(--tier-monsoon);
-}
-.sponsors-title-tempest::after {
-  background-color: var(--tier-tempest);
-}
-.sponsors-title-sandstorm::after {
-  background-color: var(--tier-sandstorm);
-}
-.sponsors-title-dustdevil::after {
-  background-color: var(--tier-dustdevil);
-}
-.sponsors-title-microburst::after {
-  background-color: var(--tier-microburst);
+.sponsors-title-monsoon::before { background: var(--tier-monsoon); }
+.sponsors-title-tempest::before { background: var(--tier-tempest); }
+.sponsors-title-sandstorm::before { background: var(--brass); }
+.sponsors-title-dustdevil::before { background: var(--tier-dustdevil); }
+.sponsors-title-microburst::before { background: var(--tier-microburst); }
+.sponsors-title::after { display: none; }
+.tier-amount {
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  opacity: 0.65;
 }
 
 .sponsors {
-  display: flex;
-  flex-wrap: wrap; /* allow wrapping to new lines */
-  justify-content: center; /* center items horizontally */
-  align-items: center; /* center items vertically in a row */
-  gap: 2rem; /* space between sponsor blocks */
-  margin: 2rem auto;
-  max-width: 1200px; /* optional: keep them from stretching too wide */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
 }
-
 .sponsor {
-  flex: 0 1 auto; /* flexible width but don’t grow too large */
+  background: rgba(30, 24, 18, 0.55);
+  -webkit-backdrop-filter: blur(12px) saturate(1.2);
+  backdrop-filter: blur(12px) saturate(1.2);
+  border: 1px solid rgba(237, 224, 195, 0.07);
+  min-height: 140px;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 1.2rem;
+  transition: transform 0.18s ease;
+  margin: 0;
 }
+.sponsor:hover { transform: translateY(-3px); }
+.sponsor img { max-height: 110px; max-width: 100%; object-fit: contain; }
+.sponsors.monsoon .sponsor { min-height: 170px; }
+.sponsors.monsoon img { max-height: 130px; }
+.sponsor.dustdevil { background: rgba(13, 10, 6, 0.45); color: var(--dune); }
 
-.sponsor img {
-  height: auto;
-  width: auto;
-  object-fit: contain;
-}
-
-/* Tier-based scaling */
-.sponsors.monsoon img {
-  max-height: 200px;
-  max-width: 400px;
-}
-.sponsor.tempest img {
-  max-height: 180px;
-  max-width: 360px;
-}
-.sponsor.sandstorm img {
-  max-height: 160px;
-  max-width: 320px;
-}
-.sponsor.dustdevil img {
-  max-height: 140px;
-  max-width: 280px;
-}
-.sponsor.microburst img {
-  max-height: 120px;
-  max-width: 240px;
-}
-.sponsor-tier {
-  margin-top: 3rem;
-  margin-bottom: 3rem;
-}
-
-/* On small screens: stack logos in a column */
-@media (max-width: 600px) {
-  .sponsors {
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-}
-/*
-.sponsors {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-}
-
-.sponsor-image {
-  max-width: 300px;
-  padding: 1rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-@media (max-width: 768px) {
-  .sponsors {
-    flex-direction: column;
-  }
-  .sponsor-image {
-    max-width: 200px;
-  }
-}
-*/
+@media (max-width: 600px) { .sponsors { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 420px) { .sponsors { grid-template-columns: 1fr; } }

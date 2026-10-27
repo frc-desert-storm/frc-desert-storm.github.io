@@ -1,0 +1,48 @@
+/* Gallery — sectioned photo grid */
+.gallery-hero {
+  background: linear-gradient(180deg, rgba(13,10,6,0.82), rgba(13,10,6,0.94)), url("../img/background.png") center / cover;
+  border-bottom: 1px solid var(--line-dark);
+}
+.gallery-section .section-container {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+.gallery-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  text-transform: uppercase;
+  margin-bottom: 1.4rem;
+}
+.gallery-heading::before {
+  content: "";
+  width: 26px;
+  height: 18px;
+  background: var(--brass);
+  clip-path: polygon(0 0, 100% 0, calc(100% - 8px) 100%, 0 100%);
+  flex: none;
+}
+.gallery-grid {
+  columns: 3;
+  column-gap: 1rem;
+}
+.gallery-item {
+  break-inside: avoid;
+  margin: 0 0 1rem;
+}
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border: 1px solid var(--line-dark);
+}
+.gallery-item.landscape img { aspect-ratio: 3 / 2; }
+.gallery-item.portrait img { aspect-ratio: 2 / 3; }
+
+@media (max-width: 960px) {
+  .gallery-grid { columns: 2; }
+}
+@media (max-width: 600px) {
+  .gallery-grid { columns: 1; }
+}

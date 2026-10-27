@@ -21,7 +21,6 @@
     </script>
     <link rel="stylesheet" href="../assets/css/styles.css" />
     <link rel="stylesheet" href="../assets/css/sponsors.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Share+Tech&amp;display=swap" rel="stylesheet" />
 </head>
 
 <body>
@@ -29,49 +28,36 @@
 
 
         <!-- Navbar -->
-        <nav class="navbar">
+        <nav class="navbar" aria-label="Main">
             <div class="navbar-container">
-                <div class="navbar-logo">
-                    <a href="/" data-discover="true">Desert Storm</a>
-                </div>
-                <div class="hamburger-menu">
+                <a class="brand" href="/" aria-label="Desert Storm home">
+                    <span class="brand-text"><strong>Desert Storm</strong><span>FRC 10988</span></span>
+                </a>
+                <div class="hamburger-menu" role="button" tabindex="0" aria-label="Toggle menu" aria-expanded="false">
                     <span></span>
                     <span></span>
                     <span></span>
                 </div>
                 <ul class="navbar-menu">
-                    <li class="navbar-item">
-                        <a class="navbar-link" href="/#home" data-discover="true">Home</a>
-                    </li>
-                    <li class="navbar-item">
-                        <a class="navbar-link" href="/#about" data-discover="true">About</a>
-                    </li>
-                    <li class="navbar-item">
-                        <a class="navbar-link" href="/#team" data-discover="true">Team</a>
-                    </li>
-                    <li class="navbar-item">
-                        <a class="navbar-link" href="/#robots" data-discover="true">Robots</a>
-                    </li>
-                    <li class="navbar-item">
-                        <a class="navbar-link" href="/#contact" data-discover="true">Contact</a>
-                    </li>
-                    <li class="navbar-item">
-                        <a class="navbar-link" href="/sponsors" data-discover="true">Sponsors</a>
-                    </li>
-                    <li class="navbar-item">
-                        <a class="navbar-link" href="/donate" data-discover="true">Donate</a>
-                    </li>
+                    <li><a class="navbar-link" href="/#about">About</a></li>
+                    <li><a class="navbar-link" href="/#robots">Robots</a></li>
+                    <li><a class="navbar-link" href="/#contact">Contact</a></li>
+                    <li><a class="navbar-link" href="/sponsors">Sponsors</a></li>
+                    <li><a class="navbar-link" href="/gallery">Gallery</a></li>
+                    <li><a class="navbar-cta" href="/#contact">Donate</a></li>
                 </ul>
             </div>
         </nav>
         <!-- /navbar -->
 
 
-        <section class="dark-section">
+        <section class="dark-section sponsors-hero">
             <div class="section-container">
+                <p class="kicker">Our pit crew off the field</p>
                 <h2 class="section-title">Sponsors</h2>
+                <p class="section-lede">Local shops, national brands, and families — every logo here bought aluminum, motors, and electronics.</p>
                 <div class="sponsor-tier">
-                    <h3 class="sponsors-title sponsors-title-monsoon">Monsoon Elite</h3>
+                    <h3 class="sponsors-title sponsors-title-monsoon">Monsoon Elite <span class="tier-amount">— $5,000+</span></h3>
                     <div class="sponsors monsoon">
                         <div class="sponsor">
                             <a href="https://skunkcreekarms.com" target="_blank">
@@ -112,7 +98,7 @@
                     </div>
                 </div>
                 <div class="sponsor-tier">
-                    <h3 class="sponsors-title sponsors-title-tempest">Tempest</h3>
+                    <h3 class="sponsors-title sponsors-title-tempest">Tempest <span class="tier-amount">— $2,500 – $4,999</span></h3>
                     <div class="sponsors">
                         <div class="sponsor tempest">
                             <a href="https://www.microchip.com/" target="_blank">
@@ -135,7 +121,7 @@
                     </div>
                 </div>
                 <div class="sponsor-tier">
-                    <h3 class="sponsors-title sponsors-title-sandstorm">Sandstorm</h3>
+                    <h3 class="sponsors-title sponsors-title-sandstorm">Sandstorm <span class="tier-amount">— $1,000 – $2,500</span></h3>
                     <div class="sponsors">
                         <div class="sponsor sandstorm">
                             <a href="https://www.azfoundation.org/ways-to-give/give-by-impact-area/quality-education/simoncics-opportunities-for-arts-and-robotics/" target="_blank">
@@ -176,7 +162,7 @@
                     </div>
                 </div>
                 <div class="sponsor-tier">
-                    <h3 class="sponsors-title sponsors-title-dustdevil">Dust Devil</h3>
+                    <h3 class="sponsors-title sponsors-title-dustdevil">Dust Devil <span class="tier-amount">— $500 – $1,000</span></h3>
 
                     <div class="sponsors">
                         <div class="sponsor dustdevil">
@@ -185,7 +171,7 @@
                     </div>
                 </div>
                 <div class="sponsor-tier">
-                    <h3 class="sponsors-title sponsors-title-microburst">Microburst</h3>
+                    <h3 class="sponsors-title sponsors-title-microburst">Microburst <span class="tier-amount">— up to $500</span></h3>
                     <div class="sponsors">
                         <div class="sponsor microburst">
                             <a href="https://www.costco.com" target="_blank">
@@ -242,8 +228,17 @@
 
 
         <footer class="footer">
-            <div class="footer-bottom">
-                <p>&#169; 2025 Desert Storm. All rights reserved.</p>
+            <div class="footer-inner">
+                <div class="footer-top">
+                    <div>
+                        <div class="footer-brand">Desert Storm · 10988</div>
+                        <p class="footer-meta">Thank you to every sponsor keeping rural STEM alive in New River, AZ.</p>
+                    </div>
+                    <nav class="footer-links" aria-label="Footer">
+                        <a href="/#about">About</a><a href="/#robots">Robots</a><a href="/gallery">Gallery</a><a href="/sponsors">Sponsors</a><a href="/#contact">Donate</a>
+                    </nav>
+                </div>
+                <div class="footer-bottom"><span>&#169; 2026 Desert Storm. All rights reserved.</span><span>New River, Arizona</span></div>
             </div>
         </footer>
 
