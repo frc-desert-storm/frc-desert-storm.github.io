@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/logo.png" />
+    <link rel="icon" type="image/png" href="/assets/img/logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://fonts.googleapis.com/css2?family=Share+Tech&display=swap" rel="stylesheet" />
     <title>Desert storm 10988</title>
@@ -249,16 +249,20 @@
         document.addEventListener("DOMContentLoaded", () => {
             const hamburger = document.querySelector(".hamburger-menu");
             const navbarMenu = document.querySelector(".navbar-menu");
-
-            hamburger.addEventListener("click", () => {
-                hamburger.classList.toggle("active");
-                navbarMenu.classList.toggle("active");
+            const toggle = () => {
+                const open = navbarMenu.classList.toggle("active");
+                hamburger.classList.toggle("active", open);
+                hamburger.setAttribute("aria-expanded", open);
+            };
+            hamburger.addEventListener("click", toggle);
+            hamburger.addEventListener("keydown", (e) => {
+                if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggle(); }
             });
-
             document.querySelectorAll(".navbar-menu a").forEach((link) => {
                 link.addEventListener("click", () => {
                     hamburger.classList.remove("active");
                     navbarMenu.classList.remove("active");
+                    hamburger.setAttribute("aria-expanded", "false");
                 });
             });
         });

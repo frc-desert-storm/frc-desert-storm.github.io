@@ -245,12 +245,16 @@
 /* Responsive */
 @media (max-width: 960px) {
   .hero-grid { grid-template-columns: 1fr; gap: 2rem; padding-top: 3rem; }
+  .hero-bg, .hero-grid, .hero-visual { transform: none; }
   .hero-visual { order: -1; }
   .hero-badge-wrap { width: min(320px, 90%); }
+  .hero-grid > div:first-child { text-align: center; }
+  .hero-sub { margin-inline: auto; }
+  .hero-actions { justify-content: center; }
   .about-grid, .contact-grid { grid-template-columns: 1fr; }
   .robots-grid { grid-template-columns: 1fr; }
   .about-figure img { height: 320px; }
-  .hero-stats { max-width: none; }
+  .hero-stats { max-width: none; margin-inline: auto; }
 }
 @media (max-width: 560px) {
   .hero-stats { grid-template-columns: 1fr; }
